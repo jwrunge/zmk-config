@@ -15,7 +15,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "HOLD_SHIFT_OR_CAPS_LOCK_OR_MOD";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_SHIFT CAPSLOCK>, <&kp LGUI>;
+            bindings = <&mt LEFT_SHIFT LGUI>, <&kp CAPSLOCK>;
         };
 
         hold_layer_or_tab_or_switch_lyr: hold_layer_or_tab_or_switch_lyr {
