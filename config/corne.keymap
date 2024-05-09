@@ -57,7 +57,7 @@
   &kp Q        &kp W           &kp F          &kp P                            &kp G                           &kp J        &kp L      &kp U       &kp Y    &kp SEMI
   &kp A        &kp R           &kp S          &kp T                            &kp D                           &kp H        &kp N      &kp E       &kp I    &kp O
   &mt LCTRL Z  &mt LEFT_ALT X  &kp C          &kp V                            &kp B                           &kp K        &kp M      &kp COMMA   &mt LALT DOT  &mt RCTRL FSLH
-                               &kp BACKSPACE  &kp shift &shift_or_caps_mod  &layer_tap_or_toggle_nav 1 0    &lt 1 ENTER  &kp SPACE  &kp DELETE
+                               &kp BACKSPACE  &kp LEFT_SHIFT &shift_or_caps_mod  &layer_tap_or_toggle_nav 1 0    &lt 1 ENTER  &kp SPACE  &kp DELETE
             >;
         };
 
