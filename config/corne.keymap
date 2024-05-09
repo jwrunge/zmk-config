@@ -11,41 +11,18 @@
     chosen { zmk,matrix_transform = &five_column_transform; };
 
     behaviors {
-        tab_activate_nav: tab_activate_nav {
+        hold_shift_or_caps_lock_or_mod: hold_shift_or_caps_lock_or_mod {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAB_ACTIVATE_NAV";
+            label = "HOLD_SHIFT_OR_CAPS_LOCK_OR_MOD";
             #binding-cells = <0>;
-            bindings = <&kp TAB>, <&to 3>;
-
-            tapping-term-ms = <200>;
+            bindings = <&mt LEFT_SHIFT CAPSLOCK>, <&kp LGUI>;
         };
 
-        caps_gui: caps_gui {
+        hold_layer_or_tab_or_switch_lyr: hold_layer_or_tab_or_switch_lyr {
             compatible = "zmk,behavior-tap-dance";
-            label = "CAPS_GUI";
+            label = "HOLD_LAYER_OR_TAB_OR_SWITCH_LYR";
             #binding-cells = <0>;
-            bindings = <&kp CAPSLOCK>, <>;
-
-            tapping-term-ms = <200>;
-        };
-
-        shift_or_caps_mod: shift_or_caps_mod {
-            compatible = "zmk,behavior-hold-tap";
-            label = "SHIFT_OR_CAPS_MOD";
-            bindings = <&kp>, <&LEFT_GUI>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        layer_tap_or_toggle_nav: layer_tap_or_toggle_nav {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_OR_TOGGLE_NAV";
-            bindings = <&mo>, <&tab_activate_nav>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            bindings = <&lt 1 TAB>, <&to 3>;
         };
     };
 
@@ -54,10 +31,10 @@
 
         Base {
             bindings = <
-  &kp Q        &kp W           &kp F          &kp P                            &kp G                           &kp J        &kp L      &kp U       &kp Y    &kp SEMI
-  &kp A        &kp R           &kp S          &kp T                            &kp D                           &kp H        &kp N      &kp E       &kp I    &kp O
-  &mt LCTRL Z  &mt LEFT_ALT X  &kp C          &kp V                            &kp B                           &kp K        &kp M      &kp COMMA   &mt LALT DOT  &mt RCTRL FSLH
-                               &kp BACKSPACE  &kp LEFT_SHIFT &shift_or_caps_mod  &layer_tap_or_toggle_nav 1 0    &lt 1 ENTER  &kp SPACE  &kp DELETE
+  &kp Q        &kp W           &kp F          &kp P                            &kp G                               &kp J        &kp L      &kp U       &kp Y    &kp SEMI
+  &kp A        &kp R           &kp S          &kp T                            &kp D                               &kp H        &kp N      &kp E       &kp I    &kp O
+  &mt LCTRL Z  &mt LEFT_ALT X  &kp C          &kp V                            &kp B                               &kp K        &kp M      &kp COMMA   &mt RIGHT_ALT DOT  &mt RCTRL FSLH
+                               &kp BACKSPACE  &hold_shift_or_caps_lock_or_mod  &hold_layer_or_tab_or_switch_lyr    &lt 1 ENTER  &kp SPACE  &kp DELETE
             >;
         };
 
@@ -81,8 +58,8 @@
 
         Nav {
             bindings = <
-  &none  &none     &kp UP_ARROW  &none      &none     &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none
-  &none  &kp LEFT  &kp DOWN      &kp RIGHT  &none     &msc SCRL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none
+  &none  &none     &kp UP_ARROW  &none      &none     &msc SCROLL_UP    &msc SCROLL_LEFT  &mmv MOVE_UP    &msc SCROLL_RIGHT  &none
+  &none  &kp LEFT  &kp DOWN      &kp RIGHT  &none     &msc SCROLL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none
   &none  &none     &none         &none      &none     &none             &none             &none           &none              &none
                    &none         &none      &tog 0    &mkp MCLK         &mkp LCLK         &mkp RCLK
             >;
