@@ -1,51 +1,92 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
 #include "zmk-helpers/helper.h"
 #include "mouse.dtsi"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/bt.h>
+
 
 / {
-    chosen {
-        zmk,matrix_transform = &five_column_transform;
+    chosen { zmk,matrix_transform = &five_column_transform; };
+
+    behaviors {
+        tab_activate_nav: tab_activate_nav {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAB_ACTIVATE_NAV";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp TAB>;
+
+            tapping-term-ms = <200>;
+        };
+
+        caps_gui: caps_gui {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CAPS_GUI";
+            #binding-cells = <0>;
+            bindings = <&kp CAPSLOCK>, <&kp CAPSLOCK>;
+
+            tapping-term-ms = <200>;
+        };
+
+        shift_or_caps_mod: shift_or_caps_mod {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFT_OR_CAPS_MOD";
+            bindings = <&kp>, <&caps_gui>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+
+        layer_tap_or_toggle_nav: layer_tap_or_toggle_nav {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_OR_TOGGLE_NAV";
+            bindings = <&mo>, <&tab_activate_nav>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
+
     keymap {
         compatible = "zmk,keymap";
 
         Base {
             bindings = <
-&kp Q        &kp W           &kp F    &kp P                    &kp G      &kp J      &kp L      &kp U      &kp Y            &kp SEMI
-&mt LCTRL A  &mt LEFT_ALT R  &lt 1 S  &lt 3 T                  &lt 2 D    &kp H      &lt 3 N    &lt 1 E    &mt RIGHT_ALT I  &mt RCTRL O
-&kp Z        &kp X           &kp C    &kp V                    &kp B      &kp K      &kp M      &kp COMMA  &kp DOT          &kp FSLH
-                                    &kp DEL  &mt LEFT_SHIFT LEFT_GUI  &kp TAB    &kp ENTER  &kp SPACE  &kp BSPC
+  &kp Q        &kp W           &kp F            &kp P                            &kp G                           &kp J        &kp L      &kp U       &kp Y    &kp SEMI
+  &kp A        &kp R           &kp S            &kp T                            &kp D                           &kp H        &kp N      &kp E       &kp I    &kp O
+  &mt LCTRL Z  &mt LEFT_ALT X  &kp C            &kp V                            &kp B                           &kp K        &kp M      &kp COMMA   &kp DOT  &kp FSLH
+                               &lt 2 BACKSPACE  &shift_or_caps_mod LEFT_SHIFT 0  &layer_tap_or_toggle_nav 1 0    &lt 1 ENTER  &kp SPACE  &kp DELETE
             >;
         };
 
         Sym {
             bindings = <
-&kp F1     &kp F2       &kp F3      &kp F4         &kp F5             &kp F6             &kp F7            &kp F8             &kp F9                &kp F10
-&kp CARET  &kp PERCENT  &kp DOLLAR  &kp AMPERSAND  &kp EXCLAMATION    &kp DOUBLE_QUOTES  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp TILDE  &kp HASH     &kp PIPE    &kp AT_SIGN    &kp UNDERSCORE     &kp SINGLE_QUOTE   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LESS_THAN         &kp GREATER_THAN
-                               &kp GRAVE   &kp F11        &kp F12            &none              &none             &none
+  &kp ESCAPE  &none        &none       &none          &none              &kp GRAVE          &none             &none              &none                 &none
+  &kp CARET   &kp PERCENT  &kp DOLLAR  &kp AMPERSAND  &kp EXCLAMATION    &kp DOUBLE_QUOTES  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+  &kp TILDE   &kp HASH     &kp PIPE    &kp AT_SIGN    &kp UNDERSCORE     &kp SINGLE_QUOTE   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LESS_THAN         &kp GREATER_THAN
+                           &none       &none          &none              &none              &none             &none
             >;
         };
 
         Num {
             bindings = <
-&none  &none  &none  &none  &out OUT_TOG    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE  &kp KP_MULTIPLY
-&none  &none  &none  &none  &none           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS   &none
-&none  &none  &none  &none  &none           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS    &none
-                     &none  &none  &none           &kp KP_ENTER     &kp KP_NUMBER_0  &none
+  &none  &none  &none  &none  &out OUT_TOG    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE  &kp KP_MULTIPLY
+  &none  &none  &none  &none  &none           &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS   &none
+  &none  &none  &none  &none  &none           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS    &none
+                &none  &none  &none           &kp KP_ENTER     &kp KP_NUMBER_0  &none
             >;
         };
 
         Nav {
             bindings = <
-&kp ESCAPE  &none     &kp UP_ARROW  &none      &none    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none
-&none       &kp LEFT  &kp DOWN      &kp RIGHT  &none    &msc SCRL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none
-&none       &none     &none         &none      &none    &none             &mkp LCLK         &mkp MCLK       &mkp RCLK          &none
-                             &none         &none      &none    &none             &none             &none
+  &none  &none     &kp UP_ARROW  &none      &none    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none
+  &none  &kp LEFT  &kp DOWN      &kp RIGHT  &none    &msc SCRL_DOWN  &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &none
+  &none  &none     &none         &none      &none    &none             &none             &none           &none              &none
+                   &none         &none      &none    &mkp MCLK         &mkp LCLK         &mkp RCLK
             >;
         };
     };
 };
+
