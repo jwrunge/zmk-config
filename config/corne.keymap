@@ -35,7 +35,7 @@
             bindings = <&kp>, <&caps_gui>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
         };
 
         layer_tap_or_toggle_nav: layer_tap_or_toggle_nav {
