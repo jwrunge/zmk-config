@@ -34,7 +34,7 @@
   &kp Q        &kp W           &kp F          &kp P                            &kp G                               &kp J        &kp L      &kp U       &kp Y    &kp SEMI
   &kp A        &kp R           &kp S          &kp T                            &kp D                               &kp H        &kp N      &kp E       &kp I    &kp O
   &mt LCTRL Z  &mt LEFT_ALT X  &kp C          &kp V                            &kp B                               &kp K        &kp M      &kp COMMA   &mt RIGHT_ALT DOT  &mt RCTRL FSLH
-                               &kp BACKSPACE  &hold_shift_or_caps_lock_or_mod  &hold_layer_or_tab_or_switch_lyr    &lt 1 ENTER  &kp SPACE  &kp DELETE
+                               &kp DELETE  &hold_shift_or_caps_lock_or_mod  &hold_layer_or_tab_or_switch_lyr    &lt 1 ENTER  &kp SPACE  &kp BACKSPACE
             >;
         };
 
