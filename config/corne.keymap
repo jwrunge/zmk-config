@@ -7,28 +7,16 @@
 #include <dt-bindings/zmk/outputs.h>
 
 &mt {
-    tapping-term-ms = <150>;
-    flavor = "tap-preferred";
+    tapping-term-ms = <250>;
+    flavor = "balanced";
+    retro-tap;
+    quick-tap-ms = <200>;
 };
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 
     behaviors {
-        hold_shift_or_caps_lock_or_mod: hold_shift_or_caps_lock_or_mod {
-            compatible = "zmk,behavior-tap-dance";
-            label = "HOLD_SHIFT_OR_CAPS_LOCK_OR_MOD";
-            #binding-cells = <0>;
-            bindings = <&mt LEFT_SHIFT LGUI>, <&kp CAPSLOCK>;
-        };
-
-        hold_layer_or_tab_or_switch_lyr: hold_layer_or_tab_or_switch_lyr {
-            compatible = "zmk,behavior-tap-dance";
-            label = "HOLD_LAYER_OR_TAB_OR_SWITCH_LYR";
-            #binding-cells = <0>;
-            bindings = <&lt 1 TAB>, <&to 3>;
-        };
-
         bt_connect_clear_0: bt_connect_clear_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "BT_CONNECT_CLEAR_0";
@@ -80,6 +68,16 @@
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&to 4>;
         };
+
+        hold_layer_tap_layer: hold_layer_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_LAYER_TAP_LAYER";
+            bindings = <&mo>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     keymap {
@@ -87,10 +85,10 @@
 
         Base {
             bindings = <
-  &kp Q        &kp W           &kp F      &kp P                            &kp G                               &kp J        &kp L         &kp U          &kp Y              &kp SEMI
-  &kp A        &kp R           &kp S      &kp T                            &kp D                               &kp H        &kp N         &kp E          &kp I              &kp O
-  &mt LCTRL Z  &mt LEFT_ALT X  &kp C      &kp V                            &kp B                               &kp K        &kp M         &kp COMMA      &mt RIGHT_ALT DOT  &mt RCTRL FSLH
-                               &lt 2 DEL  &hold_shift_or_caps_lock_or_mod  &hold_layer_or_tab_or_switch_lyr    &lt 1 ENTER  &space_or_fn  &kp BACKSPACE
+  &kp Q             &kp W        &kp F           &kp P                      &kp G                        &kp J        &kp L      &kp U            &kp Y        &kp SEMI
+  &mt LEFT_SHIFT A  &mt LCTRL R  &mt LEFT_ALT S  &kp T                      &kp D                        &kp H        &kp N      &mt RIGHT_ALT E  &mt RCTRL I  &mt RSHIFT O
+  &kp Z             &kp X        &kp C           &kp V                      &kp B                        &kp K        &kp M      &kp COMMA        &kp PERIOD   &kp SLASH
+                                 &kp DELETE      &hold_layer_tap_layer 2 4  &hold_layer_tap_layer 1 3    &lt 1 SPACE  &kp ENTER  &kp BACKSPACE
             >;
         };
 
