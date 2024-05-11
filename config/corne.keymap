@@ -9,7 +9,6 @@
 &mt {
     tapping-term-ms = <250>;
     flavor = "balanced";
-    retro-tap;
     quick-tap-ms = <200>;
 };
 
@@ -60,13 +59,6 @@
             bindings = <&bt BT_SEL 4>, <&bt BT_DISC 4>;
 
             tapping-term-ms = <200>;
-        };
-
-        space_or_fn: space_or_fn {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SPACE_OR_FN";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&to 4>;
         };
 
         hold_layer_tap_layer: hold_layer_tap_layer {
