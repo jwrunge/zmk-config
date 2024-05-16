@@ -65,7 +65,7 @@
         hold_layer_tap_layer: hold_layer_tap_layer {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_LAYER_TAP_LAYER";
-            bindings = <&held_layer>, <&tappd_layer>;
+            bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
