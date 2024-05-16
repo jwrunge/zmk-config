@@ -96,7 +96,7 @@
         Num {
             bindings = <
   &bt_connect_clear_0  &bt_connect_clear_1  &bt_connect_clear_2  &bt_connect_clear_3  &bt_connect_clear_4    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE  &kp KP_MULTIPLY
-  &out OUT_TOG         &none                &none                &none                &none                  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS   &none
+  &out OUT_BLE         &none                &none                &none                &none                  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS   &none
   &bt BT_CLR_ALL       &none                &none                &none                &none                  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS    &none
                                             &none                &none                &none                  &kp KP_ENTER     &kp KP_NUMBER_0  &none
             >;
