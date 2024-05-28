@@ -89,16 +89,16 @@
   &kp ESCAPE  &none        &none       &none          &none              &kp GRAVE          &none             &none              &none                 &none
   &kp CARET   &kp PERCENT  &kp DOLLAR  &kp AMPERSAND  &kp EXCLAMATION    &kp DOUBLE_QUOTES  &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
   &kp TILDE   &kp HASH     &kp PIPE    &kp AT_SIGN    &kp UNDERSCORE     &kp SINGLE_QUOTE   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LESS_THAN         &kp GREATER_THAN
-                           &none       &none          &none              &none              &none             &none
+                           &none       &none          &none              &trans             &trans            &trans
             >;
         };
 
         Num {
             bindings = <
-  &bt_connect_clear_0  &bt_connect_clear_1  &bt_connect_clear_2  &bt_connect_clear_3  &bt_connect_clear_4    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE  &kp KP_MULTIPLY
-  &out OUT_BLE         &none                &none                &none                &none                  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_MINUS   &none
-  &bt BT_CLR_ALL       &none                &none                &none                &none                  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS    &none
-                                            &none                &none                &none                  &kp KP_ENTER     &kp KP_NUMBER_0  &none
+  &bt_connect_clear_0  &bt_connect_clear_1  &bt_connect_clear_2  &bt_connect_clear_3  &bt_connect_clear_4    &kp STAR  &kp N7  &kp N8  &kp N9  &kp FSLH
+  &out OUT_BLE         &none                &none                &none                &none                  &kp DOT   &kp N4  &kp N5  &kp N6  &kp MINUS
+  &bt BT_CLR_ALL       &none                &none                &none                &none                  &kp N0    &kp N1  &kp N2  &kp N3  &kp PLUS
+                                            &none                &none                &none                  &trans    &trans  &trans
             >;
         };
 
@@ -107,7 +107,7 @@
   &none      &none         &kp UP_ARROW  &none      &none    &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none
   &none      &kp LEFT      &kp DOWN      &kp RIGHT  &none    &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
   &kp LCTRL  &kp LEFT_ALT  &none         &none      &none    &none           &none           &none           &none            &none
-                           &none         &none      &to 0    &mkp LCLK       &mkp MCLK       &mkp RCLK
+                           &none         &to 0      &to 0    &mkp LCLK       &mkp MCLK       &mkp RCLK
             >;
         };
 
@@ -116,7 +116,7 @@
   &kp F1   &kp F2   &kp F3   &kp F4   &kp F5     &none   &kp C_PREV            &kp C_PLAY_PAUSE          &kp C_NEXT            &none
   &kp F6   &kp F7   &kp F8   &kp F9   &kp F10    &trans  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP           &kp C_MUTE            &trans
   &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &trans  &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_MINIMUM  &kp C_BRIGHTNESS_INC  &trans
-                    &trans   &to 0    &trans     &trans  &to 0                 &trans
+                    &trans   &to 0    &to 0      &to 0   &to 0                 &trans
             >;
         };
     };
