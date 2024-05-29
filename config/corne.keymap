@@ -70,7 +70,7 @@
   &kp Q             &kp W        &kp F           &kp P         &kp B              &kp J        &kp L      &kp U            &kp Y        &kp SEMI
   &mt LEFT_SHIFT A  &mt LCTRL R  &mt LEFT_ALT S  &lt 4 T       &lt 5 G            &lt 5 M      &lt 4 N    &mt RIGHT_ALT E  &mt RCTRL I  &mt RSHIFT O
   &kp Z             &kp X        &kp C           &lt 5 D       &kp V              &kp K        &lt 5 H    &kp COMMA        &kp PERIOD   &kp SLASH
-                                 &kp LEFT_GUI    &lt 3 DELETE  &lt 2 BACKSPACE    &lt 2 SPACE  &lt 3 RET  &mo 5
+                                 &kp LEFT_GUI    &lt 3 DELETE  &lt 2 BACKSPACE    &lt 2 SPACE  &lt 3 RET  &lt 5 TAB
             >;
         };
 
