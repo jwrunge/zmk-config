@@ -77,9 +77,9 @@
 
         Base {
             bindings = <
-  &kp Q             &kp W        &kp F                &kp P                      &kp G                        &kp J        &kp L      &kp U            &kp Y        &kp SEMI
-  &mt LEFT_SHIFT A  &mt LCTRL R  &mt LEFT_ALT S       &kp T                      &kp D                        &kp H        &kp N      &mt RIGHT_ALT E  &mt RCTRL I  &mt RSHIFT O
-  &kp Z             &kp X        &kp C                &kp V                      &kp B                        &kp K        &kp M      &kp COMMA        &kp PERIOD   &kp SLASH
+  &kp Q             &kp W        &kp F                &kp P                      &kp B                        &kp J        &kp L      &kp U            &kp Y        &kp SEMI
+  &mt LEFT_SHIFT A  &mt LCTRL R  &mt LEFT_ALT S       &kp T                      &kp G                        &kp M        &kp N      &mt RIGHT_ALT E  &mt RCTRL I  &mt RSHIFT O
+  &kp Z             &kp X        &kp C                &kp D                      &kp V                        &kp K        &kp H      &kp COMMA        &kp PERIOD   &kp SLASH
                                  &mt LEFT_GUI DELETE  &hold_layer_tap_layer 2 4  &hold_layer_tap_layer 1 3    &lt 1 SPACE  &kp ENTER  &kp BACKSPACE
             >;
         };
