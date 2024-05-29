@@ -80,10 +80,10 @@
 
         ColemakDH {
             bindings = <
-  &kp Q             &kp W        &kp F           &kp P       &kp B            &kp J            &kp L      &kp U            &kp Y        &kp SEMI
-  &mt LEFT_SHIFT A  &mt LCTRL R  &mt LEFT_ALT S  &lt 3 T     &lt 2 G          &lt 2 M          &lt 4 N    &mt RIGHT_ALT E  &mt RCTRL I  &mt RSHIFT O
-  &lt 5 Z           &kp X        &kp C           &lt 1 D     &kp V            &kp K            &lt 1 H    &kp COMMA        &kp PERIOD   &lt 5 SLASH
-                                 &kp LEFT_GUI    &kp DELETE  &kp BACKSPACE    &doubletapSpace  &kp ENTER  &kp LEFT_META
+  &kp Q             &kp W        &kp F           &kp P          &kp B      &kp J      &kp L      &kp U            &kp Y        &kp SEMI
+  &mt LEFT_SHIFT A  &mt LCTRL R  &mt LEFT_ALT S  &lt 3 T        &lt 2 G    &lt 2 M    &lt 4 N    &mt RIGHT_ALT E  &mt RCTRL I  &mt RSHIFT O
+  &lt 5 Z           &kp X        &kp C           &lt 1 D        &kp V      &kp K      &lt 1 H    &kp COMMA        &kp PERIOD   &lt 5 SLASH
+                                 &kp LEFT_GUI    &kp BACKSPACE  &kp TAB    &kp SPACE  &kp ENTER  &kp LEFT_META
             >;
         };
 
