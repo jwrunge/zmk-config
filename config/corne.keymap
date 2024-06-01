@@ -102,14 +102,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TCOLEMAK";
             #binding-cells = <0>;
-            bindings = <&kp T>, <&tog 5>;
+            bindings = <&kp T>, <&tog 1>;
         };
 
         BQwerty: BQwerty {
             compatible = "zmk,behavior-tap-dance";
             label = "BQWERTY";
             #binding-cells = <0>;
-            bindings = <&kp B>, <&tog 5>;
+            bindings = <&kp B>, <&tog 1>;
         };
     };
 
@@ -119,9 +119,18 @@
         QWERTY {
             bindings = <
   &Qescape          &kp W           &kp E           &kp R             &TColemak      &kp Y            &kp U          &kp I            &kp O                &Pescape
-  &mt LEFT_SHIFT A  &kp S           &lt 1 D         &lt 2 F           &kp G          &kp H            &lt 3 J        &lt 1 K          &kp L                &mt RSHIFT SEMICOLON
-  &mt LCTRL TAB     &mt LEFT_GUI Z  &mt LEFT_ALT X  &lt 4 C           &kp V          &kp B            &lt 4 N        &mt RIGHT_ALT M  &mt RIGHT_GUI COMMA  &mt RCTRL PERIOD
+  &mt LEFT_SHIFT A  &kp S           &lt 2 D         &lt 3 F           &kp G          &kp H            &lt 4 J        &lt 2 K          &kp L                &mt RSHIFT SEMICOLON
+  &mt LCTRL TAB     &mt LEFT_GUI Z  &mt LEFT_ALT X  &lt 5 C           &kp V          &kp B            &lt 5 N        &mt RIGHT_ALT M  &mt RIGHT_GUI COMMA  &mt RCTRL PERIOD
                                     &kp GRAVE       &kp SINGLE_QUOTE  &del_or_bsp    &space_or_enter  &kp BACKSLASH  &kp SLASH
+            >;
+        };
+
+        colemak {
+            bindings = <
+  &Qescape          &kp W           &kp F           &kp P             &BQwerty       &kp J            &kp L    &kp U                 &kp Y                 &kp SEMI
+  &mt LEFT_SHIFT A  &kp R           &lt 2 S         &lt 3 T           &kp G          &kp M            &lt 4 N  &lt 2 E               &kp I                 &mt RSHIFT O
+  &mt LCTRL Z       &mt LEFT_GUI X  &mt LEFT_ALT C  &lt 5 D           &kp V          &kp K            &lt 5 H  &mt RIGHT_ALT COMMA   &mt RIGHT_GUI PERIOD  &mt RCTRL SLASH
+                                    &kp GRAVE       &kp SINGLE_QUOTE  &del_or_bsp    &space_or_enter  &kp TAB  &kp NON_US_BACKSLASH
             >;
         };
 
@@ -158,15 +167,6 @@
   &trans               &kp C_VOL_DN         &kp K_MUTE           &kp C_VOLUME_UP       &kp PRINTSCREEN        &kp PERCENT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EXCL    &kp AMPS
   &trans               &kp C_BRI_DEC        &kp C_BRI_MIN        &kp C_BRIGHTNESS_INC  &trans                 &kp HASH     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp AT      &trans
                                             &trans               &trans                &trans                 &trans       &kp MINUS             &kp UNDER
-            >;
-        };
-
-        colemak {
-            bindings = <
-  &Qescape          &kp W           &kp F           &kp P             &kp B          &kp J            &kp L    &kp U                 &kp Y                 &kp SEMI
-  &mt LEFT_SHIFT A  &kp R           &lt 1 S         &lt 2 T           &kp G          &kp M            &lt 3 N  &lt 1 E               &kp I                 &mt RSHIFT O
-  &mt LCTRL Z       &mt LEFT_GUI X  &mt LEFT_ALT X  &lt 4 D           &kp V          &kp K            &lt 4 H  &mt RIGHT_ALT COMMA   &mt RIGHT_GUI PERIOD  &mt RCTRL SLASH
-                                    &kp GRAVE       &kp SINGLE_QUOTE  &del_or_bsp    &space_or_enter  &kp TAB  &kp NON_US_BACKSLASH
             >;
         };
     };
