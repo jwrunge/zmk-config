@@ -72,7 +72,7 @@
             bindings = <&kp BACKSPACE>, <&kp DEL>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT|MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RALT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         space_or_enter: space_or_enter {
@@ -81,7 +81,7 @@
             bindings = <&kp SPACE>, <&kp ENTER>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT|MOD_RCTL|MOD_RSFT|MOD_RALT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         Qescape: Qescape {
